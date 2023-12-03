@@ -1,0 +1,82 @@
+Exercice 1 :
+
+ALGORITHME DotProduct
+
+    FONCTION dot_product(v1, v2)
+        VARIABLES
+            ps: RÉEL
+            i: ENTIER
+
+        DEBUT
+            ps := 0
+            
+            POUR i DE 1 À LONGUEUR(v1) FAIRE
+                ps := ps + v1[i] * v2[i]
+            FIN POUR
+            
+            RETOURNER ps
+        FIN
+
+    PROCÉDURE VecteursOrthogonaux
+        VARIABLES
+            n: ENTIER
+            vecteur1, vecteur2: TABLEAU DE RÉEL
+            produit_scl: RÉEL
+            i: ENTIER
+
+        DEBUT
+            ÉCRIRE "Entrez le nombre de couples de vecteurs (n) : "
+            LIRE n
+
+            POUR i DE 1 À n FAIRE
+                
+                ÉCRIRE "Entrez les composantes du premier vecteur (séparées par des espaces) : "
+                LIRE vecteur1
+
+             
+                ÉCRIRE "Entrez les composantes du deuxième vecteur (séparées par des espaces) : "
+                LIRE vecteur2
+
+                
+                produit_scl := dot_product(vecteur1, vecteur2)
+
+                
+                SI produit_scl = 0 ALORS
+                    ÉCRIRE "Les vecteurs sont orthogonaux."
+                SINON
+                    ÉCRIRE "Les vecteurs ne sont pas orthogonaux."
+                FIN SI
+            FIN POUR
+        FIN
+    VecteursOrthogonaux
+FIN ALGORITHME
+
+Exercice 2 : 
+ALGORITHME TriParInsertion
+    
+    PROCÉDURE TriInsertion(tableau)
+        VARIABLES
+            taille, i, j, temp: ENTIER
+
+        DEBUT
+            taille := LONGUEUR(tableau)
+            
+            POUR i DE 1 À taille-1 FAIRE
+                temp := tableau[i]
+                j := i
+                TANT_QUE j > 0 ET tableau[j-1] > temp FAIRE
+                    tableau[j] := tableau[j-1]
+                    j := j - 1
+                FIN TANT_QUE
+                
+                tableau[j] := temp
+            FIN POUR
+        FIN
+
+    TABLEAU arr := [5, 2, 4, 3, 1]
+    ÉCRIRE "Tableau non trié : ", arr
+    
+    TriInsertion(arr)
+    
+    ÉCRIRE "Tableau trié : ", arr
+FIN ALGORITHME
